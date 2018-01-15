@@ -70,6 +70,6 @@ COPY 1st_start.conf /etc/init
 
 VOLUME ["/etc/airtime", "/var/lib/postgresql", "/srv/airtime/stor", "/srv/airtime/watch"]
 
-EXPOSE 80 8000
+EXPOSE 80 8000 10000
 
 CMD ["/sbin/init"]
