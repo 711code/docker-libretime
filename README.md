@@ -1,13 +1,7 @@
 # DOCKER Container for running libretime (www.libretime.org)
 
 # How to run 
-docker run -d --restart=always -h libretime --name libretime \
- -v /srv/libretime/stor:/srv/airtime/stor \
- -v /srv/libretime/watch:/srv/airtime/watch \
- -v /srv/libretime/etc:/etc/airtime \
- -v /srv/libretime/postgresql:/var/lib/postgresql \
- -p 80:80 -p 8000:8000 \
- hajo/docker-libretime
+docker run -d --restart=always -h libretime --name libretime -v /srv/libretime/stor:/srv/airtime/stor -v /srv/libretime/watch:/srv/airtime/watch -v /srv/libretime/etc:/etc/airtime -v /srv/libretime/postgresql:/var/lib/postgresql -p 80:80 -p 8000:8000 -p 20000:10000 JohnnyC1951/docker-libretime
 
 For persistence the container will mount
  /etc/airtime
