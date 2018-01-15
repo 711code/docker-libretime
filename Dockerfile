@@ -22,7 +22,7 @@ RUN locale-gen --purge en_US.UTF-8 \
     && apt-get install -y  python-psycopg2 nano \
         git rabbitmq-server apache2 curl postgresql postgresql-contrib
 RUN apt-get install -y software-properties-common
-RUN apt-get -y install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python apt-transport-https
+# RUN apt-get install -y perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python apt-transport-https
 # Install webmin
 RUN echo "deb http://download.webmin.com/download/repository sarge contrib " | sudo tee /etc/apt/sources.list.d/webmin.list
 RUN echo "deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib " | sudo tee /etc/apt/sources.list.d/webmin.list
