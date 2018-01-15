@@ -16,10 +16,10 @@ MAINTAINER Hans-Joachim
 
 #
 # Install some rudimental stuff
-RUN locale-gen --purge en_US.UTF-8 \
-    && update-locale LANG=en_US.UTF-8  LANGUAGE=en_US:en  LC_ALL=en_US.UTF-8 \
+RUN locale-gen en_GB.UTF-8 \
+    && update-locale LANG=en_GB.UTF-8 LANGUAGE=en_GB:en LC_ALL=en_GB.UTF-8 \
     && apt-get update && apt-get dist-upgrade -y \
-    && apt-get install -y  python-psycopg2 nano \
+    && apt-get install -y python-psycopg2 nano \
         git rabbitmq-server apache2 curl postgresql postgresql-contrib
 RUN apt-get install -y software-properties-common
 # RUN apt-get install -y perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python apt-transport-https
@@ -29,7 +29,7 @@ RUN echo "deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge 
 RUN wget http://www.webmin.com/jcameron-key.asc \
 	&& apt-key add jcameron-key.asc \
 	&& apt-get update \
-	&& apt-get -y install webmin
+	&& apt-get install -y webmin
 
 #
 # Install libretime
